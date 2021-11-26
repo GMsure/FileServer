@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>FileServerClient</title>
+</head>
+<body>
+    <form id="file-upload-form" method="post" enctype="multipart/form-data">
+		<input type="file" name="file"><br/>
+	</form>
+    <button id="upload-btn" >上传文件</button>
+    <button id="download-btn">下载
+    <button id="info-btn">获取Json</button>
+    
+    <script>
+        var uid = "";
+        $("#upload-btn").click(function() {
+            let fileData = new FormData($("#file-upload-form")[0])
+            $.ajax({
+                url: "http://localhost:8080/fs/file/upload",
+                type: 'post',
+                data: fileData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success:function(data){
+                    alert(data);
+                    uid = data;
+                }
+            })
+        })
+        $("#download-btn").click(function() {
+            location.href=`http://localhost:8080/fs/file/download?uuid=${uid}`;
+        })
+        $("#info-btn").click(function() {
+
+            // $.get()
+            $.ajax({
+                url: 'http://localhost:8080/fs/file/getInfo?uuid=4b855fb9-615e-45c5-aa64-c6763e9623d4',
+                type: 'get',
+                success:function(data){
+                    alert(JSON.stringify(data));
+                }
+            })
+        })
+    </script>
+</body>
+</html>

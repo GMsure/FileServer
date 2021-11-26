@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>FileServer</artifactId>
+        <groupId>plus.fs</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>server</artifactId>
+
+    <dependencies>
+        <!-- 添加spring-boot-startar-web依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- 添加spring-boot-startar-test 依赖  单元测试-->
+        <!-- 测试场景启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <!-- mysql的驱动  -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <!-- 排除依赖 -->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 添加spring-boot-startar-test 依赖  单元测试-->
+        <!-- 测试场景启动器-->
+                        <dependency>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-starter-test</artifactId>
+                            <!-- 没有指定版本号 -->
+                        </dependency>
+                        <!-- mysql的驱动  -->
+                        <dependency>
+                            <groupId>mysql</groupId>
+                            <artifactId>mysql-connector-java</artifactId>
+                            <version>${mysql.version}</version>
+                            <!-- 排除依赖 -->
+                            <exclusions>
+                                <exclusion>
+                                    <groupId>com.google.protobuf</groupId>
+                                    <artifactId>protobuf-java</artifactId>
+                                </exclusion>
+                            </exclusions>
+                        </dependency>
+                        <!-- MyBatis-plus依赖 -->
+                        <!-- MyBatis-plus的代码生成器 -->
+                        <dependency>
+                            <groupId>com.baomidou</groupId>
+                            <artifactId>mybatis-plus-generator</artifactId>
+                            <version>3.5.1</version>
+                        </dependency>
+                        <!-- freemarker的依赖 -->
+                        <dependency>
+                            <groupId>org.freemarker</groupId>
+                            <artifactId>freemarker</artifactId>
+                            <version>2.3.31</version>
+                        </dependency>
+                        <!-- fastjson -->
+                        <dependency>
+                            <groupId>com.alibaba</groupId>
+                            <artifactId>fastjson</artifactId>
+                            <version>1.2.78</version>
+                        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <!-- 资源文件的位置 -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.yaml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources/</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.yaml</include>
+                    <include>**/*.yml</include>
+                    <include>**/*.html</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>

@@ -1,0 +1,23 @@
+server:
+  port: 5907
+  servlet:
+    encoding:
+      charset: UTF-8
+  tomcat:
+    threads:
+      max: 120
+    connection-timeout: 2400
+
+spring:
+  thymeleaf:
+    prefix:  classpath:/WEB/
+    suffix:  .html
+
+
+  #数据库连接池的配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/FileServer?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource

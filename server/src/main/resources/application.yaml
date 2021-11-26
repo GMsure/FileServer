@@ -1,0 +1,43 @@
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+  tomcat:
+    threads:
+      # IO密集型配置
+      max: 120
+    connection-timeout: 1800
+
+spring:
+  application:
+    name: HTTPFileServer
+  #数据库连接配置
+  datasource:
+    url: jdbc:mysql://JDBC.GMsure.plus/FileServer?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 54root233
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#mybatis的配置：
+
+#数据库连接池的配置
+druid:
+  url: jdbc:mysql://localhost:3306/FileServer?useUnicode=true&characterEncoding=UTF-8
+  username: root
+  password: root
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  maxActive: 20
+
+# 输出sql语句
+logging:
+  level:
+    com.egobuy.product.mapper: debug
+
+# 文件保存位置
+file:
+  upload:
+    path: C:\Users\10507\Desktop\Code\JAVA\FileServer\src\test\resources\receive\files
+mybatis-plus:
+  type-aliases-package: plus.fs.entity

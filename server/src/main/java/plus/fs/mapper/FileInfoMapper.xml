@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="plus.fs.mapper.FileInfoMapper">
+    <!-- 保存文件信息 -->
+    <insert id="saveFileInfo" parameterType="FileInfo">
+        INSERT INTO file_info (file_name, file_uid, file_size, file_type, file_creat_time, file_path)
+        VALUES (#{fileName}, #{fileUid}, #{fileSize}, #{fileType}, #{fileCreatTime}, #{filePath})
+    </insert>
+
+    <!--根据uid查询文件信息-->
+    <select id="getFileInfo" parameterType="string" resultType="FileInfo">
+        SELECT file_name AS fileName, file_uid AS fileUid, file_size AS fileSize, file_type AS fileType, file_creat_time AS fileCreatTime, file_path AS filePath
+        FROM file_info WHERE file_uid = #{param1}
+    </select>
+</mapper>
