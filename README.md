@@ -38,37 +38,37 @@ GET请求需要携带UUID
 
 ## 选择一个文件后上传
 
-![image-1](.\assets\1.png)
+![image-1](assets/1.png)
 
 可以看到回显的Uid即为上传成功
 
-![image-2](.\assets\2.png)
+![image-2](assets/2.png)
 
 也可以在后台看到日志info
 
-![image-3](.\assets\3.png)
+![image-3](assets/3.png)
 
 ## 接下来点击下载
 
-![image-4](.\assets\4.png)
+![image-4](assets/4.png)
 
 可以看到下载后的文件和上传的文件一致	
 
-![image-6](.\assets\6.png)
+![image-6](assets/6.png)
 
 ## 点击查看json可以看到文件元信息
 
-![image-7](.\assets\7.png)
+![image-7](assets/7.png)
 
-![image-5](.\assets\5.png)
+![image-5](assets/5.png)
 
 同样的，所有操作在后台都有记录
 
-![image-8](.\assets\8.png)
+![image-8](assets/8.png)
 
 ## 打开数据库查看数据信息
 
-![image-9](.\assets\9.png)
+![image-9](assets/9.png)
 
 也可以看到文件信息都成功保存了。
 
